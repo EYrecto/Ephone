@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyad Phone Shop</title>
+    <meta name="description" content="Welcome to Eyad Phone Shop, browse over 5000 mobile phones with their latest prices and specifications.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Intro Overlay -->
+    <div id="introOverlay" class="intro-overlay">
+        <div class="intro-content">
+            <h1 class="intro-title">Welcome to <span class="intro-highlight">Eyad Phone Shop</span></h1>
+            <button id="openWebBtn" class="open-web-btn">Open Web <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Eyad Phone Shop</h1>
+            <p>أكبر متجر هواتف في العالم، اكتشف أكثر من 5000 هاتف بأسعار حصرية!</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="ابحث عن الهاتف، الماركة، أو المواصفات...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <main class="container">
+        <aside class="filters">
+            <div class="filter-group">
+                <h3>الماركة</h3>
+                <div class="custom-select">
+                    <select id="brandFilter">
+                        <option value="all">الكل</option>
+                        <!-- Brands populated by JS -->
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h3>الرام</h3>
+                <div class="custom-select">
+                    <select id="ramFilter">
+                        <option value="all">الكل</option>
+                        <option value="2GB">2 جيجابايت</option>
+                        <option value="3GB">3 جيجابايت</option>
+                        <option value="4GB">4 جيجابايت</option>
+                        <option value="6GB">6 جيجابايت</option>
+                        <option value="8GB">8 جيجابايت</option>
+                        <option value="12GB">12 جيجابايت</option>
+                        <option value="16GB">16 جيجابايت</option>
+                        <option value="24GB">24 جيجابايت</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>ترتيب حسب</h3>
+                <div class="custom-select">
+                    <select id="sortFilter">
+                        <option value="default">الافتراضي</option>
+                        <option value="price-asc">السعر: من الأقل للأعلى</option>
+                        <option value="price-desc">السعر: من الأعلى للأقل</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-info">
+                <span id="resultCount">جاري تحميل الهواتف...</span>
+            </div>
+        </aside>
+
+        <section class="products">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>يتم الآن إعداد أكثر من 5000 هاتف...</p>
+            </div>
+            <div id="phoneGrid" class="phone-grid hidden">
+                <!-- Phone cards populated by JS -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Eyad Phone Shop. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- Details Modal -->
+    <div id="phoneModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalDetails" class="modal-body">
+                <!-- Modal details by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
